@@ -75,6 +75,9 @@ func updateSendingStatus(message model.MessageDto) {
 	}
 }
 
-func saveRedis(response *model.SmsResponse) {
-
+func saveRedis(smsResponse *model.SmsResponse) {
+	err := db.SaveSms(smsResponse)
+	if err != nil {
+		return
+	}
 }
