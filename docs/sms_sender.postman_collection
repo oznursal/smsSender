@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "975482e8-f2a8-41b8-984f-1549d1d5615f",
+		"name": "Schedular Sms Sender",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27877553"
+	},
+	"item": [
+		{
+			"name": "Webhook Request For Sms Sender",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2VAZG9lLmNvbSIsImlhdCI6MTY4NzczMDE4MCwiZXhwIjoxNjg3NzMxNjIwfQ.YgjZbYnOR5zDITGmwMn_BdzBCo29KagZDJP2HW_YLp8",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"message\": \"Accepted\", \n\"messageId\": \"$request.uuid$\" \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webhook.site/40850de7-286a-447e-abba-a760d20326cb",
+					"protocol": "https",
+					"host": [
+						"webhook",
+						"site"
+					],
+					"path": [
+						"40850de7-286a-447e-abba-a760d20326cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Sent Messages",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Process",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stop Process",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stop"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
